@@ -2,6 +2,7 @@ package spn_test;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,7 +50,8 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("ClassInfoPage.jsp");
             }else{
             	request.setAttribute("user", "fail");
-                response.sendRedirect(user.getUserType() + "_login.jsp");
+            	RequestDispatcher rd = request.getRequestDispatcher("/" + user.getUserType() +  "_login.jsp");
+                rd.forward(request, response);  
             }
         } catch (Throwable exc)
         {

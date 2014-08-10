@@ -27,13 +27,10 @@ public class LoginDAO
 
 			if (!userExists)
 			{
-				System.out.println("Username/Password entered is Incorrect or User doesnot Exists.");
 				bean.setValid(false);
 			}
 			else if (userExists)
 			{
-				String fullName = rs.getString("p_name");
-				System.out.println("Welcome " + fullName);
 				bean.setValid(true);
 			}
 
