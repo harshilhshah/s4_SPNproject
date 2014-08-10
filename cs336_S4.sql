@@ -1,3 +1,4 @@
+-- use to create schema for the database
 CREATE SCHEMA cs336_s4;
 USE cs336_s4;
 
