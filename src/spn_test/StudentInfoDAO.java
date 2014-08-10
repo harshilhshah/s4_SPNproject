@@ -19,7 +19,10 @@ public class StudentInfoDAO {
 				+ "(SELECT DISTINCT p_id FROM professor WHERE p_name = '" + pname + "'))";
 		if (prereq == 1) {
 			// prereq SQL
-			sql += " AND ";
+			sql += " AND netid IN ("
+					+ "SELECT DISTINCT netid FROM student "
+					+ "WHERE "
+					+ ")";
 		}
 		if (gpa == 1 && creditstaken == 1) {
 			sql += " ORDER BY gpa DESC, credits DESC";
