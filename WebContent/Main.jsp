@@ -15,10 +15,10 @@
 	width= "750px" height = "100px">
   <h1 style = "text-align:center">Select Your User Type </h1>
   <div style = "position:fixed; padding-left:250px">
-  <form action = "student_login.jsp">
+  <form action = "Student_login.jsp">
   <input type = "submit" name = "student" value = "Student" style = "margin:15px; height: 40px; width: 100px; font-size: 20px; border: 0;">
   </form>
-  <form action = "professor_login.jsp">
+  <form action = "Professor_login.jsp">
   <input type = "submit" name = "professor" value = "Professor" style = "margin: 15px; height: 40px; width: 100px; font-size: 20px; border: 0;">
   </form>
   </div>
