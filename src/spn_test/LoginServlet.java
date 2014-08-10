@@ -37,10 +37,10 @@ public class LoginServlet extends HttpServlet {
             user.setUserName(request.getParameter("uname"));
             user.setPassword(request.getParameter("password"));
             if(request.getParameter("studentForm")!=null){
-            	user.setUserType("Student");
+            	user.setUserType("student");
             }
-            else{
-            	user.setUserType("Professor");
+            else {
+            	user.setUserType("professor");
             }
             user = LoginDAO.login(user);
             if(user.isValid())
