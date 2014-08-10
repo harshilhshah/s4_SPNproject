@@ -77,12 +77,15 @@
 					}
 				}
 		%>
-<table>
+<form action="ProfessorServlet" method="GET">
+<table align="center">
 <tr><td><label><input type="checkbox" name="prereq">Prerequisites Complete</label></td>
 <td><label><input type="checkbox" name="gpa">GPA</label></td>
 <td><label><input type="checkbox" name="credits">Credits</label></td></tr>
 <tr><td><input type="submit" value="Requery"></td></tr>
+</form>
+<td><a href="/Spn_project/ClassInfoPage.jsp">Class Information</a></td>
 </table>
-<a href="/CS336_S4/class_information.jsp">Class Information</a>
+
 </body>
 </html>

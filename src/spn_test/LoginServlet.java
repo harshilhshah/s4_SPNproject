@@ -37,17 +37,17 @@ public class LoginServlet extends HttpServlet {
             user.setUserName(request.getParameter("uname"));
             user.setPassword(request.getParameter("password"));
             if(request.getParameter("studentForm")!=null){
-            	user.setUserType("student");
+            	user.setUserType("Student");
             }
             else{
-            	user.setUserType("professor");
+            	user.setUserType("Professor");
             }
             user = LoginDAO.login(user);
             if(user.isValid())
             {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser",user);
-                RequestDispatcher rd1 = request.getRequestDispatcher("ProfessorMain.jsp");
+                RequestDispatcher rd1 = request.getRequestDispatcher(user.getUserType() + "Main.jsp");
                 rd1.forward(request, response);  
             }else{
             	request.setAttribute("user", "fail");
