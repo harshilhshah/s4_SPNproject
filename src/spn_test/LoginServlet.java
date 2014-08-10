@@ -47,6 +47,7 @@ public class LoginServlet extends HttpServlet {
             {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser",user);
+                System.out.println("I m here");
                 RequestDispatcher rd1 = request.getRequestDispatcher("ProfessorMain.jsp");
                 rd1.forward(request, response);  
             }else{
