@@ -11,5 +11,12 @@
 <tr><td colspan="2" align="center"><input type="submit" value="submit"> </td></tr>
 </table>
 </form>
+
+<%	
+	if(request.getAttribute("user")!= null  && request.getAttribute("user").equals("fail")){%>
+	<p> <em> Authentication Failed </em> </p>
+	<% } %>
+	
+	
 </body>
 </html>
