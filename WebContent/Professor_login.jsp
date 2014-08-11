@@ -11,7 +11,7 @@
 	<% } %>
 	
 	
-<form name="profForm" action="profLoginServlet" method ="GET">
+<form name="profForm" action="ProfLoginServlet" method ="GET">
 <table>
 <tr><td>Enter your Username: </td><td><input type="text" name="uname"/></td></tr>
 <tr><td>Enter your Password: </td><td><input type="password" name="password"/></td></tr>
