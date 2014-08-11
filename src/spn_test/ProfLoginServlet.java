@@ -14,13 +14,13 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+public class ProfLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public ProfLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,17 +36,17 @@ public class LoginServlet extends HttpServlet {
             LoginBean user = new LoginBean();
             user.setUserName(request.getParameter("uname"));
             user.setPassword(request.getParameter("password"));
-            user.setUserType("Student");
+            user.setUserType("Professor");
             user = LoginDAO.login(user);
             if(user.isValid())
             {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser",user);
-                RequestDispatcher rd1 = request.getRequestDispatcher("StudentMain.jsp");
+                RequestDispatcher rd1 = request.getRequestDispatcher("ProfessorMain.jsp");
                 rd1.forward(request, response);  
             }else{
             	request.setAttribute("user", "fail");
-            	RequestDispatcher rd = request.getRequestDispatcher("/Student_login.jsp");
+            	RequestDispatcher rd = request.getRequestDispatcher("/Professor_login.jsp");
                 rd.forward(request, response);  
             }
         } catch (Throwable exc)
