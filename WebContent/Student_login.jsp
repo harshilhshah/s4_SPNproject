@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=windows-1256" pageEncoding="windows-1256" %>
+<%@page
+	import="java.sql.*, spn_test.LoginBean, spn_test.ClassInfoDAO, spn_test.ClassInfo"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
@@ -17,6 +19,8 @@
 <tr><td colspan="2" align="center"><input type="submit" value="submit"> </td></tr>
 </table>
 </form>
-
+<table>
+<td><a href="Main.jsp">Back</a></td>
+</table>
 </body>
 </html>

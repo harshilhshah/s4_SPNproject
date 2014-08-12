@@ -1,30 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="java.sql.*" %>
+    <%@page import="java.sql.*,spn_test.ConnectionManager, spn_test.LoginBean" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Student Main Page</title>
 </head>
 <body>
 <%
-		Connection conn = null;
-		String url = "jdbc:mysql://localhost:3306/test";
-        String uname = "root";
-        String pwd = "RashmikA1994";
-        Class.forName("com.mysql.jdbc.Driver");
-        try
-        {
-            conn = DriverManager.getConnection(url,uname,pwd);
-        }
-        catch (SQLException ex)
-        {
-            ex.printStackTrace();
-        }
+			LoginBean sesUser = (LoginBean)session.getAttribute("currentSessionUser");
+			Connection conn = ConnectionManager.getConnection();
 			PreparedStatement ps = null;
-			String sql = "select * 	FROM permission p, class c, course S WHERE c.c_id = p.c_id AND S.c_id = c.c_id ";
+			String sql = "select * 	FROM permission p, class c, course S WHERE c.c_id = p.c_id AND S.c_id = c.c_id "
+					+ " AND p.netid = '" + sesUser.getUsername() + "'";
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 		%>
@@ -46,11 +36,15 @@
    		<%} %>
   </table>
   	</div>
-  	<div style = "margin-top:-50px">
+  	<div>
   		<a href = "list_course.jsp">schedule</a>
   		<a href = "drop_down_menu.jsp">Select Spn#</a>
   		
   		</div>
     	</div>
+<table>
+<tr><td><a href="Student_login.jsp">Back</a></td></tr>
+<tr><td><a href="Main.jsp">Logout</a></td></tr>
+</table>
 </body>
 </html>

@@ -12,7 +12,7 @@ public class ConnectionManager{
     {
         try
         {
-            String url = "jdbc:mysql://localhost:3306/cs336_s4";
+            String url = "jdbc:mysql://localhost:3306/cs336_s4?";
             String uname = "root";
             String pwd = "rutgerscs336";
  

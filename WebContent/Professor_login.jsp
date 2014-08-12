@@ -18,6 +18,8 @@
 <tr><td colspan="2" align="center"><input type="submit" value="submit"> </td></tr>
 </table>
 </form>
-	
+<table>
+<tr><a href="Main.jsp">Back</a></tr>
+</table>
 </body>
 </html>

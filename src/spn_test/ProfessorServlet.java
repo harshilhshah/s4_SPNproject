@@ -32,25 +32,18 @@ public class ProfessorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-			StudentInfoDAO sdao = new StudentInfoDAO();
 			HttpSession session = request.getSession(true);
 			LoginBean lb = (LoginBean)session.getAttribute("currentSessionUser");
 			if (request.getParameter("prereq") != null) {
-				request.setAttribute("prereq", 1);
-			} else {
-				request.setAttribute("prereq", 0);
+				request.setAttribute("prereq", true);
 			}
 			if (request.getParameter("gpa") != null) {
-				request.setAttribute("gpa", 1);
-			} else {
-				request.setAttribute("gpa", 0);
+				request.setAttribute("gpa", true);
 			}
 			if (request.getParameter("credits") != null) {
-				request.setAttribute("credits", 1);
-			} else {
-				request.setAttribute("credits", 0);
+				request.setAttribute("credits", true);
 			}
-			
+			System.out.print(request.getAttribute("prereq") + " " + request.getAttribute("gpa") + "\n");
 			ClassInfoDAO cdao = new ClassInfoDAO();
 			ArrayList<ClassInfo> clist = cdao.getClassesByProf(lb.getUsername());
 			int clen = clist.size();

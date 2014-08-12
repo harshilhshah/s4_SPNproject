@@ -7,6 +7,7 @@ public class StudentInfo {
 	private float gpa = 0;
 	private String student_name = "";
 	private String major = "";
+	private String spn = "";
 
 	public int getNetid(){
 		return Integer.parseInt(netid);
@@ -31,6 +32,9 @@ public class StudentInfo {
 	public String getMajor(){
 		return major;
 	}
+	public String getSPN(){
+		return spn;
+	}
 
 	public void setNetid(String n){
 		this.netid = n;
@@ -50,5 +54,9 @@ public class StudentInfo {
 	
 	public void setMajor(String m){
 		this.major = m;
+	}
+	
+	public void setSPN(String sp){
+		this.spn = sp;
 	}
 }

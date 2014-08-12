@@ -14,8 +14,15 @@ public class LoginDAO
 		String username = bean.getUsername();
 		String password = bean.getPassword();
 		String userType = bean.getUserType();
-		String searchQuery = "select * from " + userType +  " where " + userType.charAt(0) + "_name ='" 
-		+ username + "' AND password ='" + password + "'";
+		String searchQuery = "";
+		if (userType.equalsIgnoreCase("Professor")) {
+			searchQuery = "select * from professor where p_name ='" 
+					+ username + "' AND password ='" + password + "'";
+		} else {
+			searchQuery = "select * from student where netid ='" 
+					+ username + "' AND password ='" + password + "'";
+		}
+		
 
 		try
 		{

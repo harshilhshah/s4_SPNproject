@@ -1,5 +1,6 @@
 package spn_test;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ClassInfo {
@@ -16,49 +17,54 @@ public class ClassInfo {
 	private String courseName = "";
 	private long[] spn;
 	private int counter = 0;
+	private ArrayList<Integer> prereqs = new ArrayList<Integer>();
 
 	public int getCid(){
-		return Integer.parseInt(cid);
+		return Integer.parseInt(this.cid);
 	}
 	
 	public String getStringCid(){
-		return cid;
+		return this.cid;
+	}
+	
+	public String getProfName(){
+		return this.profName;
 	}
 	
 	public int getDeptid(){
-		return Integer.parseInt(did);
+		return Integer.parseInt(this.did);
 	}
 	
 	public String getStringDeptid(){
-		return did;
+		return this.did;
 	}
 	
 	public int getCapacity(){
-		return capacity;
+		return this.capacity;
 	}
 	
 	public int getRoomNum(){
-		return room_num;
+		return this.room_num;
 	}
 	
 	public long getSem(){
-		return semester;
+		return this.semester;
 	}
 	
 	public String getBuilding(){
-		return building;
+		return this.building;
 	}
 	
 	public String getStart(){
-		return start_time;
+		return this.start_time;
 	}
 	
 	public String getEnd(){
-		return end_time;
+		return this.end_time;
 	}
 	
 	public String getCoursename(){
-		return courseName;
+		return this.courseName;
 	}
 	
 	public void setCid(String c){
@@ -120,6 +126,14 @@ public class ClassInfo {
 	
 	public int getCounter(){
 		return this.counter;
+	}
+	
+	public void addPrereq(String sr){
+		this.prereqs.add(Integer.parseInt(sr));
+	}
+	
+	public ArrayList<Integer> getPrereqs(){
+		return this.prereqs;
 	}
 			
 }
