@@ -58,7 +58,6 @@
 				boolean prereq = request.getAttribute( "prereq" ) != null;
 				boolean gpa = request.getAttribute( "gpa" ) != null;
 				boolean credits = request.getAttribute( "credits" ) != null;
-				System.out.print(prereq + " " + gpa + " " + credits + "\n");
 				String cid = String.valueOf(selec.getCid());
 				StudentInfoDAO sdao = new StudentInfoDAO();
 				ArrayList<StudentInfo> sinfo = sdao.getStudents(sesUser.getUsername(), prereq, gpa, credits, cid);

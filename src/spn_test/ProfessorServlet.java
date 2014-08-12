@@ -43,7 +43,6 @@ public class ProfessorServlet extends HttpServlet {
 			if (request.getParameter("credits") != null) {
 				request.setAttribute("credits", true);
 			}
-			System.out.print(request.getAttribute("prereq") + " " + request.getAttribute("gpa") + "\n");
 			ClassInfoDAO cdao = new ClassInfoDAO();
 			ArrayList<ClassInfo> clist = cdao.getClassesByProf(lb.getUsername());
 			int clen = clist.size();
